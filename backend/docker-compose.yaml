@@ -1,0 +1,73 @@
+version: '3'
+
+services:
+
+  nodejs-barber:
+    container_name: nodejs-barber
+    build: '.'
+    volumes:
+      - .:/home/node/api
+      - /home/node/api/node_modules
+    depends_on:
+      - postgres-barber
+      - mongo-barber
+      - redis-barber
+    networks:
+      - app-connect
+    ports:
+      - '3333:3333'
+
+  mongo-barber:
+    container_name: mongo-barber
+    image: 'mongo'
+    restart: unless-stopped
+    volumes:
+      - mongo-barber-data:/data
+    ports:
+      - '27017:27017'
+    networks:
+      - app-connect
+
+  postgres-barber:
+    container_name: postgres-barber
+    image: postgres:11
+    restart: unless-stopped
+    volumes:
+      - postgres-barber-data:/data
+    environment: 
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS} 
+    networks:
+      - app-connect      
+
+
+  #jobs:
+    #container_name: jobs
+    #build: .
+    #command: yarn queue
+    #depends_on: 
+      #- redis-barber
+    #networks:
+      #- app-connect
+
+  redis-barber:
+    container_name: redis-barber
+    image: bitnami/redis:latest
+    restart: unless-stopped
+    environment: 
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - redis-barber-data:/data
+    networks:
+      - app-connect
+    
+volumes:
+  postgres-barber-data:
+  mongo-barber-data:
+  redis-barber-data:
+
+
+networks:
+  app-connect:
+      driver: bridge
