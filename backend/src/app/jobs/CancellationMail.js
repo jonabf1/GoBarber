@@ -21,7 +21,7 @@ class CancellationMail {
           "'dia' dd 'de' MMMM', às' HH:mm'h'",
           {
             locale: pt,
-          }
+          },
         ),
       },
     });

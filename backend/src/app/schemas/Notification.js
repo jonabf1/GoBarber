@@ -18,7 +18,7 @@ const NotificationShema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 export default mongoose.model('Notification', NotificationShema);
