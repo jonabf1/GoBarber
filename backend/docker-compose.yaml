@@ -20,7 +20,7 @@ services:
   mongo-barber:
     container_name: mongo-barber
     image: 'mongo'
-    restart: unless-stopped
+    restart: always
     volumes:
       - mongo-barber-data:/data
     ports:
@@ -31,7 +31,7 @@ services:
   postgres-barber:
     container_name: postgres-barber
     image: postgres:11
-    restart: unless-stopped
+    restart: always
     volumes:
       - postgres-barber-data:/data
     environment: 
@@ -42,19 +42,19 @@ services:
       - app-connect      
 
 
-  #jobs:
-    #container_name: jobs
-    #build: .
-    #command: yarn queue
-    #depends_on: 
-      #- redis-barber
-    #networks:
-      #- app-connect
+  jobs:
+    container_name: jobs
+    build: .
+    command: yarn queue
+    depends_on: 
+      - redis-barber
+    networks:
+      - app-connect
 
   redis-barber:
     container_name: redis-barber
     image: bitnami/redis:latest
-    restart: unless-stopped
+    restart: always
     environment: 
       - ALLOW_EMPTY_PASSWORD=yes
     volumes:
