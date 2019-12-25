@@ -3,7 +3,6 @@ import User from '../models/User';
 
 class NotificationController {
   async index(req, res) {
-    /* check if provider_id is a provider  */
     const checkIsProvider = await User.findOne({
       where: { id: req.userId, provider: true },
     });
@@ -28,7 +27,7 @@ class NotificationController {
       {
         read: true,
       },
-      { new: true }
+      { new: true },
     );
 
     return res.json(notification);
