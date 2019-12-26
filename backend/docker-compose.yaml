@@ -5,6 +5,7 @@ services:
   nodejs-barber:
     container_name: nodejs-barber
     build: '.'
+    entrypoint: ["./init.sh"]
     volumes:
       - .:/home/node/api
       - /home/node/api/node_modules
