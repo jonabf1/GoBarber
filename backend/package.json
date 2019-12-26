@@ -12,6 +12,7 @@
     "@sentry/node": "5.6.2",
     "bcryptjs": "^2.4.3",
     "bee-queue": "^1.2.2",
+    "cors": "^2.8.5",
     "date-fns": "^2.0.0-beta.5",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
@@ -29,10 +30,10 @@
     "yup": "^0.27.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-prettier": "^3.1.0",
     "nodemon": "^1.19.1",
     "prettier": "^1.17.1",
