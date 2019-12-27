@@ -8,7 +8,7 @@ import ProviderController from './app/controllers/ProviderController';
 import SessionController from './app/controllers/SessionController';
 import FileController from './app/controllers/FileController';
 import AppointmentController from './app/controllers/AppointmentController';
-import SheduleController from './app/controllers/ScheduleController';
+import ScheduleController from './app/controllers/ScheduleController';
 import NotificationController from './app/controllers/NotificationController';
 
 import authMiddlewares from './app/middlewares/auth';
@@ -16,7 +16,6 @@ import AvailableController from './app/controllers/AvailableController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
-
 
 routes.post('/sessions', SessionController.store);
 routes.post('/users', UserController.store);
@@ -32,7 +31,7 @@ routes.post('/appointments', AppointmentController.store);
 routes.get('/appointments', AppointmentController.index);
 routes.delete('/appointments/:id', AppointmentController.delete);
 
-routes.get('/schedule', SheduleController.index);
+routes.get('/schedule', ScheduleController.index);
 
 routes.post('/files', upload.single('file'), FileController.store);
 

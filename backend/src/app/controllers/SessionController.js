@@ -19,16 +19,16 @@ class SessionController {
 
     const { email, password } = req.body;
 
-    const user = await User.findOne({ 
+    const user = await User.findOne({
       where: { email },
       include: [
-      {
-        model:File,
-        as: 'avatar',
-        attributes: ['id','path', 'url']
-      }
-      ]
-     });
+        {
+          model: File,
+          as: 'avatar',
+          attributes: ['id', 'path', 'url'],
+        },
+      ],
+    });
 
     if (!user) {
       return res.status(401).json({ error: 'User not found' });
@@ -46,7 +46,7 @@ class SessionController {
         name,
         email,
         avatar,
-        provider
+        provider,
       },
       token: jwt.sign({ id }, authConfig.secret, {
         expiresIn: authConfig.expiresIn,
