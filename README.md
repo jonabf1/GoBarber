@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="frontend/src/assets/logo.svg" width="200px">
+<img src="frontend/src/assets/minimal-logo.svg" width="200px">
 </h1>
 
 ### :page_with_curl: About
