@@ -15,8 +15,8 @@ This project is based on an application for a hair salon. Containing scheduling,
 
 ### :page_facing_up: Routes in Backend
 
-- post('/users') - Create a login
-- post('/sessions') - Log in to an account
+- **post('/users')** - Create a login
+- **post('/sessions')** - Log in to an account
 
 #### From here, authentication is required
 
