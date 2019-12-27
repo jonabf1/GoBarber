@@ -25,11 +25,11 @@ This project is based on an application for a hair salon. Containing scheduling,
 - **get('/providers/:providerId/available')** - Check provider availability
 - **post('/appointments')** - Create an appointment
 - **get('/appointments')** - List all logged-in user's appointments
-- delete('/appointments/:id') - Delete an appointment
-- get('/schedule') - Schedule services
-- post('/files') - Profile pictures
-- get('/notifications') - List all logged in user notifications
-- put('/notifications/:id') - Confirm notification was seen    
+- **delete('/appointments/:id')** - Delete an appointment
+- **get('/schedule')** - Schedule services
+- **post('/files')** - Profile pictures
+- **get('/notifications')** - List all logged in user notifications
+- **put('/notifications/:id')** - Confirm notification was seen    
 
 ### :white_check_mark: Result in Frontend
 
