@@ -20,11 +20,11 @@ This project is based on an application for a hair salon. Containing scheduling,
 
 #### From here, authentication is required
 
-- put('/users') - Update an account
-- get('/providers') - List providers
-- get('/providers/:providerId/available') - Check provider availability
-- post('/appointments') - Create an appointment
-- get('/appointments') - List all logged-in user's appointments
+- **put('/users')** - Update an account
+- **get('/providers')** - List providers
+- **get('/providers/:providerId/available')** - Check provider availability
+- **post('/appointments')** - Create an appointment
+- **get('/appointments')** - List all logged-in user's appointments
 - delete('/appointments/:id') - Delete an appointment
 - get('/schedule') - Schedule services
 - post('/files') - Profile pictures
