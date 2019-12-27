@@ -40,7 +40,9 @@ services:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASS} 
     networks:
-      - app-connect      
+      - app-connect
+    ports:
+      - '5432:5432'      
 
 
   jobs:
