@@ -17,7 +17,9 @@ This project is based on an application for a hair salon. Containing scheduling,
 
 - post('/users') - Create a login
 - post('/sessions') - Log in to an account
+
 - **From here, authentication is required**
+
 - put('/users') - Update an account
 - get('/providers') - List providers
 - get('/providers/:providerId/available') - Check provider availability
