@@ -3,7 +3,7 @@
 </h1>
 
 ### :page_with_curl: About
-This project is based on an application for a hair salon. Containing scheduling, appointments, session, authentication and authentication.
+This project is based on an application for a hair salon. Containing scheduling, appointments, session and authentication.
 
 #### To start, **Docker** is required
 
