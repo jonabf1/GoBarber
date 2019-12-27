@@ -58,6 +58,10 @@ export default function Notifications() {
   }
 
   async function handleClean() {
+    notifications.forEach(async n => {
+      await api.put(`/notifications/${n._id}`);
+    });
+
     setNotifications(notifications.map(n => n.read === true));
   }
 
