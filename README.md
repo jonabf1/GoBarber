@@ -31,10 +31,16 @@ This project is based on an application for a hair salon. Containing scheduling,
 - **get('/notifications')** - List all logged in user notifications
 - **put('/notifications/:id')** - Confirm notification was seen    
 
-### :white_check_mark: Result in Frontend
+### :heavy_check_mark: Result in Frontend
 
 <p align="center">
-  <img alt="" src="frontend/src/assets/barber.gif">
+  <img alt="" src="frontend/public/barber.gif">
+</p>
+
+### :heavy_check_mark: Result in Mobile
+
+<p align="center">
+  <img alt="" src="mobile/public/barber.gif">
 </p>
 
 ---
