@@ -39,7 +39,7 @@ class AppointmentController {
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validationfails' });
+      return res.status(400).json({ error: 'Make sure your data is correct' });
     }
     const { provider_id, date } = req.body;
 
@@ -70,7 +70,7 @@ class AppointmentController {
     if (checkAvailability) {
       return res
         .status(401)
-        .json({ error: 'Appointment date is not Availability' });
+        .json({ error: 'Appointment date are not availability' });
     }
     const appointment = await Appointment.create({
       user_id: req.userId,

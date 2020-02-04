@@ -14,7 +14,7 @@ class SessionController {
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validation fails' });
+      return res.status(400).json({ error: 'Make sure your data is correct' });
     }
 
     const { email, password } = req.body;
@@ -30,13 +30,25 @@ class SessionController {
       ],
     });
 
-    if (!user) {
-      return res.status(401).json({ error: 'User not found' });
+    if (process.env.NODE_ENV === 'development') {
+      // if (!user) {
+      //   return res.status(401).json({ error: 'User does not exist' });
+      // }
+  
+      // if (!(await user.checkPassword(password))) {
+      //   return res.status(401).json({ error: "Since passwords don't match" });
+      // }
+
+      // em produção, jogar esse código para o ELSE abaixo e descomentar
+      // acima
+      if (!user || !(await user.checkPassword(password))) {
+        return res.status(401).json({ error: 'Email or password are incorrect' });
+      }
     }
 
-    if (!(await user.checkPassword(password))) {
-      return res.status(401).json({ error: 'Password does not match' });
+    else{
     }
+
 
     const { id, name, avatar, provider } = user;
 

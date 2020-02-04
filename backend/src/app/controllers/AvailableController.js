@@ -20,7 +20,7 @@ class AvailableController {
 
     const searchDate = Number(date);
 
-    const appointment = await Appointment.finddAll({
+    const appointment = await Appointment.findAll({
       where: {
         provider_id: req.params.providerId,
         canceled_at: null,
@@ -43,6 +43,7 @@ class AvailableController {
       '17:00',
       '18:00',
       '19:00',
+      '20:00',
     ];
 
     const avaiable = shedule.map((time) => {
@@ -51,6 +52,7 @@ class AvailableController {
         setMinutes(setHours(searchDate, hour), minute),
         0,
       );
+
       return {
         time,
         value: format(value, "yyyy-MM-dd'T'HH:mm:ssxxx"),

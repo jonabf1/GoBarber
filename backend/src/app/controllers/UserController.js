@@ -15,13 +15,13 @@ class UserController {
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validation fails' });
+      return res.status(400).json({ error: 'Make sure your data is correct' });
     }
 
     const userExists = await User.findOne({ where: { email: req.body.email } });
 
     if (userExists) {
-      return res.status(400).json({ error: 'User already exists' });
+      return res.status(400).json({ error: 'Email is already being used' });
     }
 
     const { id, name, email, provider } = await User.create(req.body);
@@ -45,7 +45,7 @@ class UserController {
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validation fails' });
+      return res.status(400).json({ error: 'Make sure your data is correct' });
     }
 
     const { email, oldPassword } = req.body;
@@ -55,12 +55,12 @@ class UserController {
     if (email !== user.email) {
       const userExists = await User.findOne({ where: { email } });
       if (userExists) {
-        return res.status(400).json({ error: 'User already exists' });
+        return res.status(400).json({ error: 'Email is already being used' });
       }
     }
 
     if (oldPassword && !(await user.checkPassword(oldPassword))) {
-      return res.status(401).json({ error: 'Password does not mach' });
+      return res.status(401).json({ error:  "Since passwords don't match" });
     }
 
     await user.update(req.body);

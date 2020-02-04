@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 import api from "~/services/api";
 
-import { updateProfileSuccess, updateProfileFailure } from "./actions";
+import { updateProfileSuccess } from "./actions";
 
 export function* updateProfile({ payload }) {
   try {
@@ -23,7 +23,6 @@ export function* updateProfile({ payload }) {
     yield put(updateProfileSuccess(response.data));
   } catch (err) {
     toast.error("Erro ao atualizar perfil, confira seus dados!");
-    yield put(updateProfileFailure());
   }
 }
 
