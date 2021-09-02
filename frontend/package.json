@@ -12,7 +12,7 @@
     "date-fns-tz": "^1.0.8",
     "dotenv": "^8.2.0",
     "history": "^4.10.1",
-    "immer": "^5.1.0",
+    "immer": "^9.0.6",
     "polished": "^3.4.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
